@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Relational opr -- <,>,<=,>=,==,!=,===,!==
+        let a=null
+        let b=230 //true-1 false-0
+        document.write('A>b is '+(a>=b)+"<br>")
+        document.write('A'+"<"+' b is '+(a<b)+"<br>")
+        document.write('A==b is '+(a==b)+"<br>")
+        document.write('A===b is '+(a===b)+"<br>")
+        document.write('A!=b is '+(a!=b)+"<br>")
+        document.write('A!==b is '+(a!==b)+"<br>")
+        
+        //logical operator -- &&,||,!
+
+        let c=25;
+        document.write('A>b && a>c is '+(a>b || a>c)+"<br>")
+        document.write('!A>=b is '+!(a>=b)+"<br>")
+        
+        //Ternary operator -- ?:
+        // (condition)?true:false;
+        // (a>b)?console.log('A is max'):console.log('B is maximum')
+        
+        let ans = a>b?a:b;
+        document.write(a>b?"A is max":"B is max")
+        
+        console.log("Ans is "+ans);
+
+        document.write('A datatype -- '+typeof(a))
+        
+    </script>
+</body>
+</html>
