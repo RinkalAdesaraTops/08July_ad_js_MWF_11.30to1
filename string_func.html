@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let str="Hi Hello How are you? ";
+        document.write('Length is '+str.length+"<br>")
+        document.write('Uppercase is '+str.toUpperCase()+"<br>")
+        document.write('Lowercase is '+str.toLowerCase()+"<br>")
+        // document.write('Reverse is '+str.reverse()+"<br>")
+        let new_str = str.slice(3);
+        document.write('String is '+new_str+"<br>")
+        new_str = str.slice(3,8);
+        document.write('String is '+new_str+"<br>")
+        new_str = str.slice(-12,-1);
+        document.write('String is '+new_str+"<br>")
+        new_str = str.substr(1,7);
+        document.write('String - substr  is '+new_str+"<br>")
+
+        let txt = "Hi hello sdgf sdfgjhsdf sdfgsdf hello sdhgf jsdhgfsdf hello";
+        document.write('String is '+txt+"<br>")
+        
+        let new_txt = txt.replace(/hEllo/gi,"TEST") //case sensitive
+        document.write('String is '+new_txt+"<br>")
+    </script>
+</body>
+</html>

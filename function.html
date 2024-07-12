@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=http://localhost:4000/, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        //1)No argument & no return statement
+        function add(){
+            let a=25,b=15;
+            document.write('Addition is '+(a+b)+"<br>")
+        }
+        //2)Take argument & no return statement
+        function minus(r){
+            const pi=3.14;
+            document.write('Area of circle is '+(pi*r**2)+"<br>")
+        }
+        //3)No argument & return statement
+        function cube(){
+            let a=5;
+            return a**3;
+        }
+        //4)Take argument & return statement
+        function checkEven(a){
+            if(a%2==0){
+                return true;
+            } else {
+                return false;
+            }
+        }
+        add()
+        minus(2.5)
+        let result = cube()
+        // document.write('Cube is '+cube())
+        document.write('Cube is '+result+"<br>")
+        document.write('Even no is '+checkEven(41)+"<br>")
+
+
+    </script>
+</body>
+</html>
