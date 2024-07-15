@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul id="demo" type="square">
+
+    </ul>
+    <ul id="demo1" type="square">
+
+    </ul>
+    
+    <script>
+        let arr = [100,"23","3","44","71","850"]
+        document.write(arr[0])
+        document.write("<br> Array size is "+arr.length)
+        //while do_while for
+        let tr = '';
+        arr.forEach((i)=>{
+            if(i==3 || i==7)
+                tr+= "<li>"+i+"</li>"; 
+            // tr+= "<li>"+i+"</li>";
+        })
+        document.getElementById("demo").innerHTML = tr;
+        // let str_arr = ["stf","abc","fgh","xyz","pqr"]
+        // document.write("<br>"+arr.sort())
+        // document.write("<br>"+arr.sort((a,b)=>{
+        //     return b-a; //100-25 +ve =25 100 3-44 = -41
+        // })) //compare function
+        // document.write("<br>"+arr.reverse()) 
+        ar1 = arr.map((i)=>{
+            return i*2;
+
+        })
+        document.getElementById("demo1").innerHTML = ar1;
+//foreach -- loop  - doesn't return any value
+// map -- function - return array - create copy of array . doesn't change value of original arry
+        let search = arr.filter((i)=>{
+                return i==100
+        }) //returns array
+        console.log(search);
+        search = arr.includes(100)
+        console.log(search); //return boolean 
+    </script>
+</body>
+</html>
