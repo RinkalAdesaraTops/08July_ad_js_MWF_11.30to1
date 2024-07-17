@@ -39,11 +39,12 @@
 //foreach -- loop  - doesn't return any value
 // map -- function - return array - create copy of array . doesn't change value of original arry
         let search = arr.filter((i)=>{
-                return i==100
-        }) //returns array
+                return i==100 || i=="44"
+        }) //always returns array
         console.log(search);
         search = arr.includes(100)
-        console.log(search); //return boolean 
+        console.log(search); //always return boolean-true,false
+
     </script>
 </body>
 </html>

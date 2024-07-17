@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a=10; //variable
+        //Multiple value - Use Array
+        let arr = [10,20,30,40,50]; //elements
+        let ans = arr.filter((i)=>{
+                return i==30 || i==40
+        });
+        document.write('array is '+ans)
+        console.log(ans);
+        //includes function
+        ans = arr.includes(500)
+        document.write('<br> array is '+ans)
+        console.log(ans);
+        // find -- return only 1 record
+        // filter -- return multiple record in array format
+        // includes -- return boolean value - true,false
+
+        ans = arr.find((a)=>{
+                return a==30 || a==40
+        })
+        document.write('<br> array is '+ans)
+        console.log(ans);
+
+        let newarr = [1,2,3,4,5]; //15
+        //Reduce 
+        let sum = newarr.reduceRight((total,a)=>{
+                console.log("total is "+total); //1 3 6
+                console.log("A is "+a); //1 3 6
+                return total+a;
+        })
+        document.write('<br> Addition is '+sum)
+
+    </script>
+</body>
+</html>
