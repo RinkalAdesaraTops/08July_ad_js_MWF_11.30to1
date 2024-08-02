@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="demo">
+        <p id="txt">hello</p>
+        <p>jfdgjdf dfkghdfkjg </p>
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Architecto, facilis eum? Ratione, temporibus quod. Impedit perspiciatis, quos nemo facilis qui in similique tempora optio ipsum ducimus nulla inventore officiis vero!</p>
+        <img src="" id="pic" alt="" height="100px" width="100px">
+    </div>
+    <div class="box">
+        jdkfgh jkdfhgdkjfg test dfgdf dfgdfg
+    </div>
+    <div class="box">
+        jdkfgh jkdfhgdkjfg 
+    </div>
+    <script>
+        document.getElementById("txt").style.color="red"
+        document.getElementById("txt").style.backgroundColor="yellow"
+        document.getElementById("pic").src = "https://images.pexels.com/photos/757889/pexels-photo-757889.jpeg"
+        let a = document.getElementsByTagName("p")
+        for(i=0;i<a.length;i++){
+            if((i+1)%2 == 0 )
+                a[i].style.color = "blue"
+            else
+                a[i].style.color = "red"
+        }
+        a = document.getElementsByClassName("box")
+        console.log(typeof a);
+
+        //queryselector  queryselectorAll
+        let ans = document.querySelectorAll("p")
+        console.log(typeof ans);
+        // console.log(ans[1].innerHTML);
+        let a1= [1,2,3,4]
+        console.log(typeof a1);       
+        let ans1 = a1.map((i)=>{
+            return i*2;
+        })
+        console.log(ans1);
+        for(i=0;i<ans.length;i++){
+            if((i+1)%2 == 0 )
+                ans[i].style.color = "pink"
+            else
+                ans[i].style.color = "green"
+        }
+        
+    </script>
+</body>
+</html>

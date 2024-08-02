@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        const arr = [1,2,3,4,5]
+        let new_arr = arr.map((i)=> i+10)
+        console.log(new_arr);
+        document.write('<br> '+new_arr)
+        let search = arr.filter((i)=>{
+            return i%2==0;
+        })
+        console.log(search);
+        document.write('<br> '+search)
+
+        let numbers = [5, 20, 100, 60, 1];
+const maxValue = numbers.reduce((max, curr) => {
+    console.log("max is "+max);
+    console.log("current is "+curr);
+    if(curr > max) max = curr;
+    return max;
+});
+console.log(maxValue); // 100
+    </script>
+</body>
+</html>
