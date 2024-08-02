@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="order" id="" onchange="changeOrder(this)">
+        <option value="">Select</option>
+        <option value="1">Asc</option>
+        <option value="2">DESC</option>
+    </select> 
+    <input type="search" name="" id="">
+    <button>search</button>
+    <br><br>
+    <table border="2">
+        <tr>
+            <th>Id</th>
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+        <tbody id="udata">
+
+        </tbody>
+    </table>
+    <script>
+        let user_obj = [
+            {
+                id:101,
+                name:"test",
+                age:25,
+                salary:25500
+            },
+            {
+                id:102,
+                name:"abcd",
+                age:23,
+                salary:34500
+            },
+            {
+                id:103,
+                name:"rteruit",
+                age:26,
+                salary:45000
+            }
+        ]
+       
+        let final_arr = user_obj.map((i)=>{
+            return i;
+        });        
+        const disp = ()=>{
+            tr = '';
+            user_obj.map((i)=>{
+                tr += '<tr><td>'+i.id+'</td><td>'+i.name+'</td><td>'+i.age+'</td><td>'+i.salary+'</td></tr>';
+            })
+            document.getElementById("udata").innerHTML = tr;
+        }
+        disp()
+        
+
+
+        const changeOrder = (a)=>{
+            let ord = a.value;
+            if(ord == "1"){
+                let arr1 = user_obj.sort((p,q)=>{
+                    return p.age-q.age;
+                })
+                disp()
+
+            } else if(ord == "2"){
+                let arr = user_obj.sort((p,q)=>{
+                    return q.age-p.age;
+                })
+                //user_obj = arr;
+                disp()
+            }
+             else {
+                disp(user_obj)
+            }
+            
+
+        }
+
+        
+        </script>
+</body>
+</html>
