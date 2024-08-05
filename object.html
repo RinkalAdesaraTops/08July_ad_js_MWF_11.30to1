@@ -10,11 +10,16 @@
         <option value="">--select--</option>
         <option value="asc">Asc</option>
         <option value="desc">Desc</option>
-    </select> <br><br>
+    </select>
+    <input type="text" name="search" id="search" >
+    <button onclick="searchName()" >Search</button>
+    <br><br>
+    <input type="text" name="srcData" id="srcData" placeholder="enter any name" oninput="filterData(this)">
+    <br><br>
     <table border="2">
         <thead>
         <tr>
-            <th>Id</th>
+            <th>Id</th>                                                                         
             <th>Name</th>
             <th>Age</th>
             <th>Salary</th>
@@ -67,10 +72,13 @@
             {
                 "uid":104,
                 "name":"ghifdjkg",
-                "age":18,
+                "age":23,
                 "salary":21500
             }
         ]
+        let final_arr = user_obj.map((i)=>{
+                return i;
+        })
         let tr = ''
 
         const getName = (e)=>{
@@ -98,6 +106,38 @@
             document.getElementById("userdata").innerHTML = tr;
         }
         disp()
+        const searchName = ()=>{
+            let nm = document.getElementById("search").value;
+            
+            if(nm != ''){
+                let arr = final_arr.filter((i)=>{
+                    return i.name.toLowerCase() == nm.toLowerCase()
+                })
+            
+                user_obj = arr;
+            } else {
+                user_obj = final_arr
+            }
+            
+            disp()
+        }
+        const filterData = (a)=>{
+            let val = a.value;
+            if(val != ''){
+                let arr = user_obj.filter((i)=>{
+                    if(i.name.toLowerCase().includes(val.toLowerCase)){
+                        return i;
+                    } 
+                })
+                user_obj = arr;
+            } 
+            else {
+                user_obj = final_arr
+            }
+            
+            disp()
+            
+        }
     </script>
 </body>
 </html>
