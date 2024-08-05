@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select name="order" id="order" onchange="getName(this)">
+        <option value="">--select--</option>
+        <option value="asc">Asc</option>
+        <option value="desc">Desc</option>
+    </select>
+    <input type="text" name="search" id="search" >
+    <button onclick="searchName()" >Search</button>
+    <br><br>
+    <input type="text" name="srcData" id="srcData" placeholder="enter any name" oninput="filterData(this)">
+    <br><br>
+    <table border="2">
+        <thead>
+        <tr>
+            <th>Id</th>                                                                         
+            <th>Name</th>
+            <th>Age</th>
+            <th>Salary</th>
+        </tr>
+    </thead>
+        <tbody id="userdata">
+
+        </tbody>
+    </table>
+
+    <script>
+
+        let a=10 //variable
+        let b = [10,20,30] //array
+        let arr = ["fsdhf",24,25000,76.84,"anc"]
+        //create object
+        let obj = {
+            "name":"Test",
+            "age":25,
+            "salary":35000
+        }
+        document.write('<br> Name is '+obj.name)
+        document.write('<br> Age is '+obj['age'])
+        for (let k in obj) {
+            console.log(k);
+            // console.log(v);                                                                                                                      `
+
+            console.log(k+ " is " + obj[k]);   
+        }
+
+        let user_obj = [
+            {
+                "uid":101,
+                "name":"Test",
+                "age":25,
+                "salary":35000
+            },
+            {
+                "uid":102,
+                "name":"Testsfds",
+                "age":22,
+                "salary":35500
+            },
+            {
+                "uid":103,
+                "name":"abc",
+                "age":18,
+                "salary":21500
+            },
+            {
+                "uid":104,
+                "name":"ghifdjkg",
+                "age":23,
+                "salary":21500
+            }
+        ]
+        let final_arr = user_obj.map((i)=>{
+                return i;
+        })
+        let tr = ''
+
+        const getName = (e)=>{
+            console.log(e.value);
+            let ans; 
+            if(e.value == "asc"){
+                ans = user_obj.sort((a,b)=>{
+                    return a.age - b.age
+                }) 
+            }  else if(e.value == "desc"){
+                ans = user_obj.sort((a,b)=>{
+                    return b.age - a.age
+                 }) 
+            }
+            
+            user_obj = ans;
+            disp()
+            // console.log(ans);                                                                                                                                           
+        }
+        const disp = ()=>{
+            tr = '';
+            user_obj.map((i)=>{
+                tr+= '<tr><td>'+i.uid+'</td><td>'+i.name+'</td><td>'+i.age+'</td><td>'+i.salary+'</td></tr>';
+            })
+            document.getElementById("userdata").innerHTML = tr;
+        }
+        disp()
+        const searchName = ()=>{
+            let nm = document.getElementById("search").value;
+            
+            if(nm != ''){
+                let arr = final_arr.filter((i)=>{
+                    return i.name.toLowerCase() == nm.toLowerCase()
+                })
+            
+                user_obj = arr;
+            } else {
+                user_obj = final_arr
+            }
+            
+            disp()
+        }
+        const filterData = (a)=>{
+            let val = a.value;
+            if(val != ''){
+                let arr = user_obj.filter((i)=>{
+                    if(i.name.toLowerCase().includes(val.toLowerCase)){
+                        return i;
+                    } 
+                })
+                user_obj = arr;
+            } 
+            else {
+                user_obj = final_arr
+            }
+            
+            disp()
+            
+        }
+    </script>
+</body>
+</html>
