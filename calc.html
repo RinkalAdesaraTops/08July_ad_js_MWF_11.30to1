@@ -17,7 +17,8 @@
     <button onclick="addData('6')">6</button><br><br>
     <button onclick="addData('+')">+</button>
     <button onclick="addData('-')">-</button>
-    <button onclick="finalAns()">Ans</button>
+    <button onclick="finalAns()">Ans</button><br><br>
+    <button onclick="back()">Back</button>
 
     <script>
         let tr = '';
@@ -28,8 +29,11 @@
         const finalAns = ()=>{
             let result = eval(tr)
             document.getElementById("no").value = result
-            tr = '';
-            
+            tr = '';           
+        }
+        const back = ()=>{
+            tr = tr.slice(0,-1)
+            document.getElementById("no").value = tr
         }
     </script>
 </body>

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .abc{
+            border:2px solid black;
+        }
+    </style>
+</head>
+<body>
+    <h3>Localstorage Demo</h3>
+    <div id="demo" class="abc">
+        <button onclick="delData()">Delete Age</button>
+        <button onclick="delAllData()">Delete All</button>
+    </div>
+    <div id="demo1">Hello</div>
+    <script>
+        //localstorage data set
+        // localStorage.setItem("Name","abc123")
+        // localStorage.setItem("Age","25")
+        // localStorage.setItem("salary","test")
+
+        let a = localStorage.getItem("Name")
+        document.getElementById("demo").innerHTML += "Name is "+a
+        document.getElementById("demo1").innerText = "Hi test"
+
+        const delData = ()=>{
+            localStorage.removeItem("Age")
+        }
+        const delAllData = ()=>{
+            localStorage.clear()
+        }
+
+        let arr = [10,20,30,40]
+        //javascript object notation
+        localStorage.setItem('Array',JSON.stringify(arr))
+
+        let ar = localStorage.getItem('Array')
+        let tr = JSON.parse(ar)
+        let [a1,b,...c] = arr;
+        console.log(tr[3]);
+
+        let user_obj = {
+            id:101,
+            name:"fsdh",
+            age:24
+        }
+
+        localStorage.setItem("MyObj",JSON.stringify(user_obj))
+        
+        let obj = JSON.parse(localStorage.getItem('MyObj'))
+        const {name,age} = obj
+
+        document.getElementById("demo").innerHTML += "Name is "+name
+        document.getElementById("demo").innerHTML += "Age is "+age
+
+        
+
+
+    </script>
+</body>
+</html>
